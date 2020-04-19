@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v0k-1B-U9I">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="u9v-tk-tTH">
+            <objects>
+                <viewController id="yXx-mk-0xa" customClass="FirstViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hwK-Tw-0R3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-jv-QrM">
+                                <rect key="frame" x="75" y="313.5" width="225" height="40"/>
+                                <color key="backgroundColor" red="0.56049132469999996" green="0.43835616440000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kh1-JL-g9k"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="sjl-Bg-Ff5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="dLZ-PB-38s"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 pomodoro cycles completed today" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeA-UO-ABp">
+                                <rect key="frame" x="75" y="373.5" width="225" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kOD-Le-PNX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZnO-jv-QrM" firstAttribute="centerX" secondItem="hwK-Tw-0R3" secondAttribute="centerX" id="K5m-jj-03j"/>
+                            <constraint firstItem="MeA-UO-ABp" firstAttribute="top" secondItem="ZnO-jv-QrM" secondAttribute="bottom" constant="20" id="NwH-So-dyh"/>
+                            <constraint firstItem="ZnO-jv-QrM" firstAttribute="width" secondItem="hwK-Tw-0R3" secondAttribute="width" multiplier="0.6" id="O5k-cq-964"/>
+                            <constraint firstItem="MeA-UO-ABp" firstAttribute="width" secondItem="ZnO-jv-QrM" secondAttribute="width" id="RyW-RU-Aef"/>
+                            <constraint firstItem="ZnO-jv-QrM" firstAttribute="centerY" secondItem="hwK-Tw-0R3" secondAttribute="centerY" id="S5l-BI-qch"/>
+                            <constraint firstItem="MeA-UO-ABp" firstAttribute="centerX" secondItem="hwK-Tw-0R3" secondAttribute="centerX" id="dbU-OP-CPl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xfm-py-EPQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nGe-V7-OKi"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="MeA-UO-ABp" id="OAv-E2-NuC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQg-nB-awa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="49N-Ax-e3d">
+                                <rect key="frame" x="81.5" y="228.5" width="212.5" height="210.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="sCY-lA-PF0">
+                                        <rect key="frame" x="0.0" y="0.0" width="212.5" height="93.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="hml-bc-mf6">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hml-bc-mf6" secondAttribute="height" multiplier="1:1" id="vDm-y9-McP"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="dH1-23-4NJ">
+                                                <rect key="frame" x="118.5" y="0.0" width="94" height="93.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BEN-QW-ufV">
+                                        <rect key="frame" x="0.0" y="116.5" width="212.5" height="94"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="eZD-RL-5vi">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="94"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eZD-RL-5vi" secondAttribute="height" multiplier="1:1" id="URj-5o-VkM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="Cx8-45-xyc">
+                                                <rect key="frame" x="118.5" y="0.0" width="94" height="94"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9X5-Nw-HF5">
+                                <rect key="frame" x="75" y="479" width="225" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fA-Fc-Q6h">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="40"/>
+                                        <color key="backgroundColor" red="0.56049132469999996" green="0.43835616440000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="QD7-qt-Fwl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <state key="normal" title="START">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-yE-HTz">
+                                        <rect key="frame" x="0.0" y="60" width="225" height="40"/>
+                                        <state key="normal" title="RESET">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xv-wQ-gIJ">
+                                        <rect key="frame" x="0.0" y="120" width="225" height="40"/>
+                                        <state key="normal" title="CLOSE">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="PKf-WH-ik3">
+                                <rect key="frame" x="75" y="65" width="225" height="133.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyJ-ub-ilo">
+                                        <rect key="frame" x="80.5" y="0.0" width="64" height="55"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj7-wG-EYT">
+                                        <rect key="frame" x="63.5" y="78" width="98.5" height="55.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="49N-Ax-e3d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K0f-QH-gSs"/>
+                            <constraint firstItem="49N-Ax-e3d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QOe-L5-7ic"/>
+                            <constraint firstItem="PKf-WH-ik3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Rnl-DW-sGl"/>
+                            <constraint firstItem="hml-bc-mf6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="Rtn-r1-r8W"/>
+                            <constraint firstItem="9X5-Nw-HF5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tg0-Bz-GIc"/>
+                            <constraint firstItem="9X5-Nw-HF5" firstAttribute="top" secondItem="49N-Ax-e3d" secondAttribute="bottom" constant="40" id="V8b-oi-3bS"/>
+                            <constraint firstItem="9X5-Nw-HF5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="VSI-7d-n1j"/>
+                            <constraint firstItem="49N-Ax-e3d" firstAttribute="top" secondItem="PKf-WH-ik3" secondAttribute="bottom" constant="30" id="VfK-oc-u7w"/>
+                            <constraint firstItem="PKf-WH-ik3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xrv-3i-EcK"/>
+                            <constraint firstItem="PKf-WH-ik3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="vsE-gm-G40"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gd1-lF-Gfh"/>
+                    <connections>
+                        <outlet property="closeButton" destination="2Xv-wQ-gIJ" id="qfQ-mc-kdl"/>
+                        <outlet property="messageLabel" destination="nyJ-ub-ilo" id="tT8-nU-5pJ"/>
+                        <outlet property="resetButton" destination="Thw-yE-HTz" id="s3J-Hi-qoe"/>
+                        <outlet property="startPauseButton" destination="5fA-Fc-Q6h" id="u71-fL-pLp"/>
+                        <outlet property="timeLabel" destination="Sj7-wG-EYT" id="R5X-jj-uKh"/>
+                        <outletCollection property="tomatoImages" destination="hml-bc-mf6" collectionClass="NSMutableArray" id="WFv-58-qkN"/>
+                        <outletCollection property="tomatoImages" destination="dH1-23-4NJ" collectionClass="NSMutableArray" id="xC7-Sj-K3N"/>
+                        <outletCollection property="tomatoImages" destination="eZD-RL-5vi" collectionClass="NSMutableArray" id="WcH-ke-vSd"/>
+                        <outletCollection property="tomatoImages" destination="Cx8-45-xyc" collectionClass="NSMutableArray" id="xxi-xl-u03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vKC-KD-JV6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v0k-1B-U9I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Pu-Hc-OvW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yXx-mk-0xa" kind="relationship" relationship="rootViewController" id="uMr-U4-SbL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXz-3y-ldP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.79999999999995" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tomato" width="89" height="91"/>
+    </resources>
+</document>
