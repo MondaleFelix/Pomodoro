@@ -46,8 +46,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         //ACTION: Set button actions for startPauseButton, resetButton and closeButton
-       
-
+        startPauseButton.addTarget(self, action: #selector(startPauseButtonPressed), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(resetButtonPressed), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
         resetAll()
         
     }
@@ -75,25 +76,30 @@ class ViewController: UIViewController {
         if timer.isValid {
          // Timer running
          // ACTION: Change the button’s title to “Continue”
+            startPauseButton.setTitle("Continue", for: .normal)
          // ACTION: Enable the reset button
+            resetButton.isEnabled = true
          // ACTION: Pause the timer, call the method pauseTimer
+            pauseTimer()
             
            
         } else {
          // Timer stopped or hasn't started
          // ACTION: Change the button’s title to “Pause”
+            startPauseButton.setTitle("Pause", for: .normal)
          // ACTION: Disable the Reset button
+            resetButton.isEnabled = false
             
            
             
             if currentInterval == 0 && timeRemaining == pomodoroDuration {
                 // We are at the start of a cycle
                 // ACTION: begin the cycle of intervals
-                
+                startNextInterval()
             } else {
                 // We are in the middle of a cycle
                 // ACTION: Resume the timer.
-                
+                runTimer()
             }
         }
     }
@@ -105,11 +111,13 @@ class ViewController: UIViewController {
         }
         
         //ACTION: call the reset method
-        
+        resetAll()
     }
 
     //ACTION: add the method to dismiss the view controller
-    
+    @objc func closeButtonPressed(){
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK: Time Manipulation
     
