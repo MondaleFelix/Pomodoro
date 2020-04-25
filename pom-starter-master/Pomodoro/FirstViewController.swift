@@ -15,20 +15,22 @@ class FirstViewController: UIViewController {
     
     deinit {
         //ACTION: Remove observers
-       
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("receivedNotification"), object: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //ACTION: Add observers
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification), name: Notification.Name("receivedNotification"), object: nil)
         
     }
     
     @objc func receivedNotification(_ notification:Notification) {
         // ACTION: Update value of completed cycles
+        completedCycles += 1
         // ACTION: Update message label
+        messageLabel.text = "\(completedCycles) pomodoro cycles completed today"
         
     }
 }
